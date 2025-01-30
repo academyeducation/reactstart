@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./CounterButton.css";
 
 export default function CounterButton() {
     const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        console.log("Count", count);
+    }, [count]);
 
     const handleClick = (e) => {
         e.preventDefault();

@@ -2,3 +2,13 @@
     background: black;
     color: white;
 }
+
+.counter2 {
+    background: blue;
+    color: white;
+}
+
+.counter:hover,
+.counter2:hover {
+    cursor: pointer;
+}

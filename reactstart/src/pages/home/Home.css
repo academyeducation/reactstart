@@ -1,0 +1,14 @@
+.klass1 {
+    background-color: red;
+    color: white;
+}
+
+.klass2 {
+    background-color: blue;
+    color: white;
+}
+
+.klass1:hover,
+.klass2:hover {
+    cursor: pointer;
+}
