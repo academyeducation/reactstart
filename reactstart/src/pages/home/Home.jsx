@@ -37,8 +37,6 @@ function App() {
     const [numbers, setNumbers] = useState([1, 2, 3, 4, 5]);
     const [name, setName] = useState("");
     const [textName, setTextName] = useState("Anna");
-    const [fetchData, setFetchData] = useState([]);
-    const [loading, setLoading] = useState(true);
 
     const [count, setCount] = useState(0);
 
@@ -64,13 +62,6 @@ function App() {
         inputRef.current.focus();
         console.log("Math", math.current);
         math.current = Math.random();
-        fetch("https://swapi.dev/api/people/1?format=json")
-            .then((response) => response.json())
-            .then((data) => {
-                console.log("Fetch data:", data);
-                setFetchData(data);
-                setLoading(false);
-            });
 
         console.log("textName was updated");
     }, []);
@@ -180,19 +171,6 @@ function App() {
             <Counter object={counterObject} />
 
             {data && data.map((item) => <Users item={item} />)}
-
-            {loading ? (
-                <p>Loading...</p>
-            ) : (
-                <>
-                    {fetchData && (
-                        <div>
-                            <h1>Fetch data</h1>
-                            <p>{fetchData.name}</p>
-                        </div>
-                    )}
-                </>
-            )}
 
             <form onSubmit={handleAliasSubmit}>
                 <input type="text" name="alias" placeholder="Alias" value={alias} onChange={handleAliasChange} />
